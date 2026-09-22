@@ -2,7 +2,11 @@ from flask import Blueprint, jsonify, render_template, request
 
 from app.database import lead_ekle, tum_leadler
 from app.services.ai_service import AIServiceError, ai_service
+from flask_cors import CORS
 
+app = Flask(__name__)
+
+CORS(app)
 
 pages = Blueprint("pages", __name__)
 api = Blueprint("api", __name__)
